@@ -393,6 +393,41 @@
     pointer-events: none;
     z-index: 0;
   }
+ @media (max-width: 768px) {
+
+    .hero {
+      min-height: auto;
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    .hero-img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: top center;
+      opacity: 0.80;
+    }
+
+    .hero-overlay {
+      display: none;
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      padding: 0 1rem;
+    }
+
+    .scroll-hint {
+      display: none;
+    }
+
+  }
 </style>
 </head>
 <body>
