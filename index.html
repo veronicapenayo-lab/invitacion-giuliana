@@ -1,626 +1,394 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta property="og:title" content="Mis 15 - Giuliana">
-<meta property="og:description" content="Estás invitado a celebrar mis 15 🎉">
-<meta property="og:image" content="https://veronicapenayo-lab.github.io/invitacion-giuliana/imagen4.png">
-<meta property="og:url" content="https://veronicapenayo-lab.github.io/invitacion-giuliana/">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Estás invitado a celebrar mis 15 años </title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<title>Giuliana · XV Años · 6 Feb 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --gold: #d4a017;
-    --gold-light: #f0c040;
-    --purple-deep: #2a0045;
-    --purple-dark: #0d0018;
-    --purple-mid: #4a1070;
-    --green-glow: #00cc44;
-    --text-light: #e8d0f8;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-shine: #f0d060;
+    --cream: #fdf8f0;
+    --white: #ffffff;
+    --text-dark: #2a1f0a;
+    --text-mid: #6b4f1a;
+    --text-light: #9a7a3a;
   }
-
   html { scroll-behavior: smooth; }
-
   body {
-    background: #04000a;
-    color: var(--text-light);
+    background: #fdf8f0;
+    color: var(--text-dark);
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     min-height: 100vh;
-    overflow-x: hidden;
   }
 
-  /* ---- HERO ---- */
   .hero {
-    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    padding-bottom: 3rem;
-  }
-
-  .hero-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    opacity: 0.80;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom,
-      rgba(4,0,10,0.1) 0%,
-      rgba(4,0,10,0.05) 40%,
-      rgba(4,0,10,0.6) 70%,
-      rgba(4,0,10,0.95) 100%
-    );
-  }
-
-  .hero-content {
+    justify-content: center;
+    padding: 4rem 2rem;
     position: relative;
-    z-index: 2;
-    text-align: center;
-    animation: fadeUp 1.6s ease both;
+    background: linear-gradient(160deg, #fffdf5 0%, #fdf6e3 50%, #f7edd0 100%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 18% 18%, rgba(184,134,11,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 82% 82%, rgba(184,134,11,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(212,160,23,0.04) 0%, transparent 70%);
+    pointer-events: none;
   }
 
-  .hero-eyebrow {
+  .hero-inner {
+    position: relative; z-index: 1;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .ornament { margin-bottom: 1.4rem; }
+
+  .mis-quince {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 0.68rem;
     letter-spacing: 8px;
-    color: var(--gold);
+    color: var(--text-light);
     text-transform: uppercase;
-    margin-bottom: 0.6rem;
-    opacity: 0;
-    animation: fadeUp 1s 0.3s ease forwards;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 1s 0.1s ease both; opacity: 0;
   }
 
-  .hero-name {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(2.8rem, 10vw, 5.5rem);
-    font-weight: 400;
-    color: #fff;
-    line-height: 1;
-    text-shadow: 0 0 60px rgba(180,60,240,0.4);
-    opacity: 0;
-    animation: fadeUp 1s 0.5s ease forwards;
-  }
-
-  .hero-sub {
+  .fifteen {
     font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    letter-spacing: 6px;
-    color: var(--gold);
-    margin-top: 0.5rem;
-    opacity: 0;
-    animation: fadeUp 1s 0.7s ease forwards;
+    font-size: clamp(5.5rem, 22vw, 9.5rem);
+    font-weight: 600;
+    line-height: 0.88;
+    background: linear-gradient(160deg, #c8950e 0%, #f0d060 38%, #b8860b 62%, #e8c040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeUp 1s 0.25s ease both; opacity: 0;
+    filter: drop-shadow(0 2px 10px rgba(184,134,11,0.18));
+  }
+
+  .anos {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.25rem;
+    letter-spacing: 10px;
+    color: var(--text-light);
+    margin-top: 0.15rem;
+    animation: fadeUp 1s 0.35s ease both; opacity: 0;
+  }
+
+  .divider {
+    display: flex; align-items: center; gap: 12px;
+    margin: 1.6rem auto;
+    width: 70%;
+    animation: fadeUp 1s 0.45s ease both; opacity: 0;
+  }
+  .dl { flex: 1; height: 0.5px; background: linear-gradient(to right, transparent, var(--gold-light), transparent); }
+  .dd { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); flex-shrink: 0; }
+
+  .nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+    color: var(--text-dark);
+    line-height: 1.05;
+    animation: fadeUp 1s 0.55s ease both; opacity: 0;
   }
 
   .scroll-hint {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    opacity: 0;
-    animation: fadeIn 1s 2s ease forwards;
+    margin-top: 2.8rem;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    animation: fadeIn 1s 2.2s ease both; opacity: 0;
   }
-  .scroll-hint span {
-    font-size: 0.6rem;
-    letter-spacing: 4px;
-    color: var(--purple-mid);
-    text-transform: uppercase;
-  }
-  .scroll-arrow {
-    width: 1px;
-    height: 32px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 1.5s infinite;
-  }
+  .scroll-hint span { font-size: 0.56rem; letter-spacing: 4px; color: var(--text-light); text-transform: uppercase; }
+  .scroll-arrow { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 1.5s infinite; }
 
-  /* ---- SECTIONS ---- */
-  section {
+  .content { background: var(--white); }
+  section { max-width: 560px; margin: 0 auto; padding: 3.5rem 2rem; }
+
+  .gold-line { display: flex; align-items: center; gap: 12px; margin: 0 auto 2.5rem; }
+  .gl { flex: 1; height: 0.5px; background: linear-gradient(to right, transparent, rgba(184,134,11,0.35), transparent); }
+  .gd { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* FRASE */
+  .frase-section {
+    text-align: center;
+    padding: 3.5rem 2rem 2rem;
     max-width: 560px;
     margin: 0 auto;
-    padding: 3.5rem 1.5rem;
   }
-
-  .gold-line {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 auto 2.5rem;
+  .frase-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 4vw, 1.55rem);
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
   }
-  .gl { flex: 1; height: 0.5px; background: rgba(212,160,23,0.35); }
-  .gd { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
-
-  /* ---- DETAILS ---- */
-  .details-card {
-    border: 0.5px solid rgba(212,160,23,0.22);
-    background: rgba(42,0,69,0.18);
-    padding: 2rem 2rem;
-    margin-bottom: 1.5rem;
+  .frase-quote em {
+    font-style: normal;
+    background: linear-gradient(135deg, #c8950e, #d4a017);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-
-  .detail-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    padding: 1rem 0;
-    border-bottom: 0.5px solid rgba(255,255,255,0.06);
-  }
-  .detail-item:last-child { border-bottom: none; }
-
-  .detail-icon {
-    font-size: 1.2rem;
-    margin-top: 2px;
-    flex-shrink: 0;
-    width: 24px;
-    text-align: center;
-  }
-
-  .detail-label {
-    font-size: 0.62rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--purple-mid);
-    margin-bottom: 0.25rem;
-  }
-  .detail-value {
+  .frase-invitacion {
+    display: inline-block;
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    color: var(--gold);
-    line-height: 1.4;
-  }
-  .detail-sub {
-    font-size: 0.78rem;
-    color: rgba(232,208,248,0.5);
-    margin-top: 0.15rem;
-  }
-
-  .map-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 0.5rem;
-    font-size: 0.72rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--green-glow);
-    text-decoration: none;
-    border-bottom: 0.5px solid rgba(0,204,68,0.3);
-    padding-bottom: 1px;
-    transition: color 0.3s, border-color 0.3s;
-  }
-  .map-link:hover { color: #80ffaa; border-color: rgba(0,255,100,0.5); }
-
-  /* ---- COUNTDOWN ---- */
-  .countdown-wrap {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem;
-    margin: 2rem 0;
-  }
-  .cd-box {
-    text-align: center;
-    padding: 1rem 0.5rem;
-    border: 0.5px solid rgba(212,160,23,0.2);
-    background: rgba(42,0,69,0.2);
-  }
-  .cd-num {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--gold);
-    line-height: 1;
-    display: block;
-  }
-  .cd-label {
-    font-size: 0.58rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--purple-mid);
-    margin-top: 0.3rem;
-    display: block;
-  }
-
-  /* ---- RSVP ---- */
-  .rsvp-section {
-    text-align: center;
-  }
-
-  .section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
+    font-size: 0.75rem;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
+    color: var(--white);
+    background: linear-gradient(135deg, #c8950e, #d4a017);
+    padding: 0.85rem 2.2rem;
+    box-shadow: 0 4px 18px rgba(184,134,11,0.22);
+    margin-top: 0.5rem;
   }
-  .section-body {
-    font-size: 0.85rem;
-    color: rgba(232,208,248,0.6);
-    line-height: 1.7;
-    margin-bottom: 2rem;
+  .frase-divider {
+    display: flex; align-items: center; gap: 12px;
+    margin: 2rem auto 0;
+    width: 60%;
   }
 
-  .rsvp-form { display: flex; flex-direction: column; gap: 1rem; }
+  /* DETAILS */
+  .details-card {
+    border: 1px solid rgba(184,134,11,0.18);
+    background: linear-gradient(135deg, #fffdf5 0%, #fdf8ed 100%);
+    overflow: hidden;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 4px 24px rgba(184,134,11,0.07);
+  }
+  .detail-item { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 1.8rem; border-bottom: 0.5px solid rgba(184,134,11,0.09); }
+  .detail-item:last-child { border-bottom: none; }
+  .detail-icon { font-size: 0.95rem; flex-shrink: 0; width: 20px; text-align: center; margin-top: 3px; color: var(--gold-light); }
+  .detail-label { font-size: 0.54rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.25rem; }
+  .detail-value { font-family: 'Cinzel', serif; font-size: 0.92rem; color: var(--text-dark); line-height: 1.4; }
+  .detail-sub { font-size: 0.76rem; color: var(--text-light); margin-top: 0.1rem; }
+  .map-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 0.42rem; font-size: 0.64rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 0.5px solid rgba(184,134,11,0.28); padding-bottom: 1px; transition: color 0.3s; }
+  .map-link:hover { color: var(--gold-light); }
 
-  .form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    text-align: left;
+  /* PRICE */
+  .price-box {
+    border: 1px solid rgba(184,134,11,0.2);
+    background: linear-gradient(135deg, #fffdf5 0%, #fef9ec 100%);
+    padding: 1.5rem 1.8rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    box-shadow: 0 4px 20px rgba(184,134,11,0.07);
+    margin-bottom: 1.4rem;
   }
-  .form-label {
-    font-size: 0.6rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--purple-mid);
+  .price-label { font-size: 0.54rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.28rem; }
+  .price-note { font-size: 0.7rem; color: var(--text-light); line-height: 1.5; }
+  .price-amount {
+    font-family: 'Cinzel', serif;
+    font-size: 1.75rem; font-weight: 600;
+    background: linear-gradient(135deg, #c8950e, #f0d060, #b8860b);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    white-space: nowrap;
   }
-  .form-input {
-    background: rgba(42,0,69,0.25);
-    border: 0.5px solid rgba(212,160,23,0.25);
-    color: var(--text-light);
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 0.95rem;
-    padding: 0.85rem 1rem;
-    outline: none;
-    transition: border-color 0.3s;
-    width: 100%;
-    border-radius: 0;
-  }
-  .form-input:focus { border-color: rgba(212,160,23,0.6); }
-  .form-input::placeholder { color: rgba(232,208,248,0.25); }
 
-  .radio-group {
-    display: flex;
-    gap: 1rem;
-  }
-  .radio-option {
-    flex: 1;
-    position: relative;
-  }
-  .radio-option input { display: none; }
-  .radio-option label {
-    display: block;
-    text-align: center;
-    padding: 0.75rem 1rem;
-    border: 0.5px solid rgba(212,160,23,0.2);
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(232,208,248,0.5);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .radio-option input:checked + label {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(212,160,23,0.08);
-  }
+  /* COUNTDOWN */
+  .section-eyebrow { text-align: center; font-size: 0.56rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 1rem; }
+  .countdown-wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
+  .cd-box { text-align: center; padding: 1rem 0.4rem; border: 1px solid rgba(184,134,11,0.14); background: #fffdf5; }
+  .cd-num { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 600; color: var(--gold-light); line-height: 1; display: block; }
+  .cd-label { font-size: 0.5rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); margin-top: 0.28rem; display: block; }
+
+  /* RSVP */
+  .rsvp-section { background: linear-gradient(135deg, #fffdf5 0%, #fdf8ed 100%); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-dark); margin-bottom: 0.8rem; text-align: center; }
+  .rsvp-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--text-light); text-align: center; margin-bottom: 2rem; line-height: 1.6; }
 
   .rsvp-btn {
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
+    display: block;
+    width: 100%;
+    text-align: center;
     font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 5px;
     text-transform: uppercase;
-    padding: 1rem 2rem;
-    cursor: pointer;
+    color: var(--white);
+    background: linear-gradient(135deg, #c8950e, #d4a017);
+    padding: 1.1rem 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(184,134,11,0.25);
     transition: all 0.3s;
-    margin-top: 0.5rem;
-  }
- .rsvp-btn:hover {
-    box-shadow: 0 0 25px rgba(212,160,23,0.4);
   }
   .rsvp-btn:hover {
-    background: rgba(212,160,23,0.1);
-    box-shadow: 0 0 20px rgba(212,160,23,0.15);
+    background: linear-gradient(135deg, #d4a017, #e8c040);
+    box-shadow: 0 6px 26px rgba(184,134,11,0.35);
   }
 
-  /* success state */
-  .rsvp-success {
-    display: none;
-    padding: 2rem;
-    border: 0.5px solid rgba(0,204,68,0.3);
-    background: rgba(0,80,30,0.1);
-    text-align: center;
-  }
-  .rsvp-success.show { display: block; animation: fadeUp 0.6s ease; }
-  .success-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-  .success-text {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    color: var(--green-glow);
-    letter-spacing: 3px;
-  }
-  .success-sub {
-    font-size: 0.8rem;
-    color: rgba(232,208,248,0.5);
-    margin-top: 0.5rem;
-    line-height: 1.6;
-  }
+  footer { background: var(--white); text-align: center; padding: 2rem 1rem 3rem; border-top: 1px solid rgba(184,134,11,0.1); }
+  footer p { font-size: 0.58rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(106,79,26,0.3); }
 
-  /* ---- FOOTER ---- */
-  footer {
-    text-align: center;
-    padding: 2rem 1rem 3rem;
-    border-top: 0.5px solid rgba(212,160,23,0.12);
-  }
-  footer p {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(232,208,248,0.2);
-  }
-
-  /* ---- ANIMATIONS ---- */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; } to { opacity: 1; }
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(1); }
-    50% { opacity: 1; transform: scaleY(1.1); }
-  }
-
-  /* stars bg */
-  .stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
- @media (max-width: 768px) {
-
-    .hero {
-      min-height: auto;
-      height: auto;
-      padding-bottom: 0;
-    }
-
-    .hero-img {
-      position: relative;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: top center;
-      opacity: 0.80;
-    }
-
-    .hero-overlay {
-      display: none;
-    }
-
-    .hero-content {
-      position: absolute;
-      bottom: 20%;
-      left: 0%;
-      width: 100%;
-      padding: 0 1rem;
-    }
-
-    .scroll-hint {
-    @media (max-width: 768px) {
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 1.2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-
-    opacity: 0;
-    animation: fadeIn 1.5s 2s ease forwards;
-   }
-
-  .scroll-hint span {
-    font-size: 0.55rem;
-    letter-spacing: 3px;
-    color: rgba(212,160,23,0.7); /* dorado más suave */
-    text-transform: uppercase;
-   }
-
-  .scroll-arrow {
-    width: 1px;
-    height: 28px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 1.8s infinite;
-  }
-
-}
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3;} 50%{opacity:1;} }
 </style>
 </head>
 <body>
 
-<canvas class="stars" id="stars"></canvas>
-
-<!-- HERO -->
 <div class="hero">
-  <img class="hero-img" src="imagen4.png" alt="Giuliana 15 años"/>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Una noche de misterio te espera</p>
-    <h1 class="hero-name">Giuliana</h1>
-    <p class="hero-sub">XV · Años</p>
-  </div>
-  <div class="scroll-hint">
-    <span>Descubrí</span>
-    <div class="scroll-arrow"></div>
+  <div class="hero-inner">
+    <div class="ornament">
+      <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="35%" stop-color="#d4a017" stop-opacity="0.7"/>
+            <stop offset="65%" stop-color="#d4a017" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="22" x2="200" y2="22" stroke="url(#og)" stroke-width="0.6"/>
+        <polygon points="100,8 106,22 100,36 94,22" fill="none" stroke="#d4a017" stroke-width="1" opacity="0.65"/>
+        <circle cx="100" cy="22" r="3" fill="#d4a017" opacity="0.85"/>
+        <circle cx="55"  cy="22" r="2"   fill="#d4a017" opacity="0.4"/>
+        <circle cx="145" cy="22" r="2"   fill="#d4a017" opacity="0.4"/>
+        <circle cx="20"  cy="22" r="1.2" fill="#d4a017" opacity="0.22"/>
+        <circle cx="180" cy="22" r="1.2" fill="#d4a017" opacity="0.22"/>
+      </svg>
+    </div>
+
+    <p class="mis-quince">Mis 15 años</p>
+    <div class="fifteen">15</div>
+    <div class="anos">años</div>
+
+    <div class="divider"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+
+    <div class="nombre">Giuliana</div>
+
+    <div style="margin-top:1.8rem;">
+      <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="og2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="35%" stop-color="#d4a017" stop-opacity="0.6"/>
+            <stop offset="65%" stop-color="#d4a017" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="22" x2="200" y2="22" stroke="url(#og2)" stroke-width="0.6"/>
+        <circle cx="100" cy="22" r="2.5" fill="#d4a017" opacity="0.75"/>
+        <circle cx="55"  cy="22" r="1.6" fill="#d4a017" opacity="0.35"/>
+        <circle cx="145" cy="22" r="1.6" fill="#d4a017" opacity="0.35"/>
+      </svg>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Ver detalles</span>
+      <div class="scroll-arrow"></div>
+    </div>
   </div>
 </div>
 
-<!-- DETALLES -->
-<section>
-  <div class="gold-line"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+<div class="content">
 
-  <div class="details-card">
-    <div class="detail-item">
-      <div class="detail-icon">🖤</div>
-      <div>
-        <div class="detail-label">Fecha</div>
-        <div class="detail-value">Sábado, 6 de Febrero</div>
-        <div class="detail-sub">2027</div>
-      </div>
-    </div>
-    
-    <div class="detail-item">
-      <div class="detail-icon">🌑</div>
-      <div>
-        <div class="detail-label">Lugar</div>
-        <div class="detail-value">Camping ASTEOM</div>
-        <div class="detail-sub">Santo Tomé, Santa Fe</div>
-       <a class="map-link" href="https://www.google.com/maps/place/Camping+ASTEOM./@-31.697662,-60.751944,17z/data=!3m1!4b1!4m6!3m5!1s0x95b5a94da3319bf1:0x6a2811653832e045!8m2!3d-31.6976666!4d-60.7493691!16s%2Fg%2F11hz8_n0dl?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-  ↗ Ver en mapa
-</a>
-      </div>
+  <!-- FRASE -->
+  <div class="frase-section">
+    <div class="gold-line" style="margin-bottom:2rem;"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+    <p class="frase-quote">
+      Soñé con este día <em>desde pequeña.</em><br/>
+      Hoy quiero compartirlo con las personas<br/>
+      que <em>más amo</em> en el mundo.
+    </p>
+    <div class="frase-divider"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+    <div style="margin-top:1.8rem;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--text-light);letter-spacing:2px;margin-bottom:1rem;">por eso...</p>
+      <span class="frase-invitacion">¡Te invito a festejar conmigo! ✦</span>
     </div>
   </div>
 
-  <!-- Countdown -->
-  <div class="gold-line" style="margin-bottom:1.2rem;"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
-  <p style="text-align:center;font-size:0.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--purple-mid);margin-bottom:1rem;">Faltan</p>
-  <div class="countdown-wrap">
-    <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Días</span></div>
-    <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Horas</span></div>
-    <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Min</span></div>
-    <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seg</span></div>
-  </div>
-</section>
+  <!-- DETAILS -->
+  <section>
+    <div class="gold-line"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
 
-<!-- RSVP -->
-<section class="rsvp-section">
-  <div class="gold-line"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
-  <h2 class="section-title">Confirmá tu asistencia</h2>
-  <p class="section-body">Tu presencia es el mejor regalo.<br/>Confirmá antes del 25 de enero de 2027.</p>
+    <div class="details-card">
+      <div class="detail-item">
+        <div class="detail-icon">✦</div>
+        <div>
+          <div class="detail-label">Fecha</div>
+          <div class="detail-value">Sábado, 6 de Febrero</div>
+          <div class="detail-sub">2027</div>
+        </div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon">◈</div>
+        <div>
+          <div class="detail-label">Lugar</div>
+          <div class="detail-value">Camping ASTEOM</div>
+          <div class="detail-sub">Santo Tomé, Santa Fe</div>
+          <a class="map-link" href="https://www.google.com/maps/place/Camping+ASTEOM./@-31.697662,-60.751944,17z" target="_blank">↗ Ver en mapa</a>
+        </div>
+      </div>
+    </div>
 
- <a href="https://forms.gle/jdyGF9ZZ8Lhobaug8" target="_blank" class="rsvp-btn">
-  Confirmar asistencia
-</a>
+    <div class="price-box">
+      <div>
+        <div class="price-label">Valor de la entrada</div>
+        <div class="price-note">Por persona</div>
+      </div>
+      <div class="price-amount">$120.000</div>
+    </div>
 
-  <div class="rsvp-success" id="rsvpSuccess">
-    <span class="success-icon">✦</span>
-    <div class="success-text" id="successMsg">¡Nos vemos esa noche!</div>
-    <p class="success-sub" id="successSub">Tu confirmación fue registrada.<br/>Giuliana ya sabe que estarás ahí.</p>
-  </div>
-</section>
+    <div class="gold-line" style="margin-bottom:1rem;"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+    <p class="section-eyebrow">Faltan</p>
+    <div class="countdown-wrap">
+      <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Días</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Horas</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Min</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seg</span></div>
+    </div>
+  </section>
 
-<footer>
-  <p>Giuliana · XV Años · 6 · 02 · 2027</p>
-</footer>
+  <!-- RSVP -->
+  <section class="rsvp-section">
+    <div class="gold-line"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+    <h2 class="section-title">Confirmá tu asistencia</h2>
+    <p class="rsvp-sub">Hacé click para completar el formulario<br/>y avisarnos que vas a estar.</p>
+    <a class="rsvp-btn" href="https://docs.google.com/forms/d/1aN7VRCZJkwMkADZzD_-NLLuA1znYnueAbAJ5-AaWEjQ/viewform" target="_blank">
+      Confirmar asistencia ↗
+    </a>
+  </section>
+
+  <footer>
+    <svg width="120" height="28" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.8rem;display:block;margin-left:auto;margin-right:auto;">
+      <line x1="0" y1="14" x2="120" y2="14" stroke="rgba(184,134,11,0.18)" stroke-width="0.5"/>
+      <circle cx="60" cy="14" r="2.5" fill="rgba(184,134,11,0.3)"/>
+      <circle cx="30" cy="14" r="1.5" fill="rgba(184,134,11,0.18)"/>
+      <circle cx="90" cy="14" r="1.5" fill="rgba(184,134,11,0.18)"/>
+    </svg>
+    <p>Giuliana · XV Años · 6 · II · MMXXVII</p>
+  </footer>
+
+</div>
 
 <script>
-// Stars
-(function(){
-  const c = document.getElementById('stars');
-  const ctx = c.getContext('2d');
-  let W, H, stars = [];
-  function resize(){ W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
-  function init(){
-    stars = [];
-    for(let i=0;i<120;i++) stars.push({
-      x: Math.random()*W, y: Math.random()*H,
-      r: Math.random()*1.2+0.2,
-      a: Math.random(),
-      s: Math.random()*0.005+0.002,
-      gold: Math.random()>0.85
-    });
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    stars.forEach(s=>{
-      s.a += s.s;
-      if(s.a>1||s.a<0) s.s*=-1;
-      ctx.beginPath();
-      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle = s.gold
-        ? `rgba(212,160,23,${s.a*0.7})`
-        : `rgba(200,170,240,${s.a*0.5})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  resize(); init(); draw();
-  window.addEventListener('resize', ()=>{ resize(); init(); });
-})();
-
-// Countdown
-function updateCountdown(){
-  const target = new Date('2027-02-06T20:00:00-03:00');
-  const now = new Date();
-  const diff = target - now;
-  if(diff <= 0){
-    document.getElementById('cd-d').textContent = '0';
-    document.getElementById('cd-h').textContent = '0';
-    document.getElementById('cd-m').textContent = '0';
-    document.getElementById('cd-s').textContent = '0';
-    return;
-  }
-  const d = Math.floor(diff/86400000);
-  const h = Math.floor((diff%86400000)/3600000);
-  const m = Math.floor((diff%3600000)/60000);
-  const s = Math.floor((diff%60000)/1000);
-  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+function tick(){
+  var t=new Date('2027-02-06T00:00:00-03:00')-new Date();
+  if(t<0)t=0;
+  document.getElementById('cd-d').textContent=String(Math.floor(t/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor(t%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(t%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(t%60000/1000)).padStart(2,'0');
 }
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-// RSVP - stores locally and shows confirmation
-function submitRSVP(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const attend = document.querySelector('input[name="attend"]:checked').value;
-  const msg = document.getElementById('msg').value;
-
-  // Save to localStorage
-  const responses = JSON.parse(localStorage.getItem('rsvp_giuliana') || '[]');
-  responses.push({ name, phone, attend, msg, ts: new Date().toISOString() });
-  localStorage.setItem('rsvp_giuliana', JSON.stringify(responses));
-
-  // Show result
-  document.getElementById('rsvpForm').style.display = 'none';
-  const success = document.getElementById('rsvpSuccess');
-  success.classList.add('show');
-  if(attend === 'si'){
-    document.getElementById('successMsg').textContent = '¡Nos vemos esa noche, ' + name.split(' ')[0] + '!';
-    document.getElementById('successSub').textContent = 'Tu confirmación fue registrada. Giuliana ya sabe que estarás ahí. 🖤';
-  } else {
-    document.getElementById('successMsg').textContent = 'Gracias por avisarnos, ' + name.split(' ')[0];
-    document.getElementById('successSub').textContent = 'Vamos a extrañarte esa noche. Giuliana ya sabe que no podrás estar.';
-  }
-  success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
+tick();setInterval(tick,1000);
 </script>
 </body>
 </html>
