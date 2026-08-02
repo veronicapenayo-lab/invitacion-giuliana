@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Giuliana · XV Años · 6 Feb 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-shine: #f0d060;
+    --cream: #fdf8f0;
+    --white: #ffffff;
+    --text-dark: #2a1f0a;
+    --text-mid: #6b4f1a;
+    --text-light: #9a7a3a;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #fdf8f0;
+    color: var(--text-dark);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: linear-gradient(160deg, #fffdf5 0%, #fdf6e3 50%, #f7edd0 100%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 18% 18%, rgba(184,134,11,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 82% 82%, rgba(184,134,11,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(212,160,23,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative; z-index: 1;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .ornament { margin-bottom: 1.4rem; }
+
+  .mis-quince {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 8px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 1s 0.1s ease both; opacity: 0;
+  }
+
+  .fifteen {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(5.5rem, 22vw, 9.5rem);
+    font-weight: 600;
+    line-height: 0.88;
+    background: linear-gradient(160deg, #c8950e 0%, #f0d060 38%, #b8860b 62%, #e8c040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeUp 1s 0.25s ease both; opacity: 0;
+    filter: drop-shadow(0 2px 10px rgba(184,134,11,0.18));
+  }
+
+  .anos {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.25rem;
+    letter-spacing: 10px;
+    color: var(--text-light);
+    margin-top: 0.15rem;
+    animation: fadeUp 1s 0.35s ease both; opacity: 0;
+  }
+
+  .divider {
+    display: flex; align-items: center; gap: 12px;
+    margin: 1.6rem auto;
+    width: 70%;
+    animation: fadeUp 1s 0.45s ease both; opacity: 0;
+  }
+  .dl { flex: 1; height: 0.5px; background: linear-gradient(to right, transparent, var(--gold-light), transparent); }
+  .dd { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); flex-shrink: 0; }
+
+  .nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+    color: var(--text-dark);
+    line-height: 1.05;
+    animation: fadeUp 1s 0.55s ease both; opacity: 0;
+  }
+
+  .scroll-hint {
+    margin-top: 2.8rem;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    animation: fadeIn 1s 2.2s ease both; opacity: 0;
+  }
+  .scroll-hint span { font-size: 0.56rem; letter-spacing: 4px; color: var(--text-light); text-transform: uppercase; }
+  .scroll-arrow { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 1.5s infinite; }
+
+  .content { background: var(--white); }
+  section { max-width: 560px; margin: 0 auto; padding: 3.5rem 2rem; }
+
+  .gold-line { display: flex; align-items: center; gap: 12px; margin: 0 auto 2.5rem; }
+  .gl { flex: 1; height: 0.5px; background: linear-gradient(to right, transparent, rgba(184,134,11,0.35), transparent); }
+  .gd { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* FRASE */
+  .frase-section {
+    text-align: center;
+    padding: 3.5rem 2rem 2rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .frase-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 4vw, 1.55rem);
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
+  }
+  .frase-quote em {
+    font-style: normal;
+    background: linear-gradient(135deg, #c8950e, #d4a017);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .frase-invitacion {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: linear-gradient(135deg, #c8950e, #d4a017);
+    padding: 0.85rem 2.2rem;
+    box-shadow: 0 4px 18px rgba(184,134,11,0.22);
+    margin-top: 0.5rem;
+  }
+  .frase-divider {
+    display: flex; align-items: center; gap: 12px;
+    margin: 2rem auto 0;
+    width: 60%;
+  }
+
+  /* DETAILS */
+  .details-card {
+    border: 1px solid rgba(184,134,11,0.18);
+    background: linear-gradient(135deg, #fffdf5 0%, #fdf8ed 100%);
+    overflow: hidden;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 4px 24px rgba(184,134,11,0.07);
+  }
+  .detail-item { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 1.8rem; border-bottom: 0.5px solid rgba(184,134,11,0.09); }
+  .detail-item:last-child { border-bottom: none; }
+  .detail-icon { font-size: 0.95rem; flex-shrink: 0; width: 20px; text-align: center; margin-top: 3px; color: var(--gold-light); }
+  .detail-label { font-size: 0.54rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.25rem; }
+  .detail-value { font-family: 'Cinzel', serif; font-size: 0.92rem; color: var(--text-dark); line-height: 1.4; }
+  .detail-sub { font-size: 0.76rem; color: var(--text-light); margin-top: 0.1rem; }
+  .map-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 0.42rem; font-size: 0.64rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 0.5px solid rgba(184,134,11,0.28); padding-bottom: 1px; transition: color 0.3s; }
+  .map-link:hover { color: var(--gold-light); }
+
+  /* PRICE */
+  .price-box {
+    border: 1px solid rgba(184,134,11,0.2);
+    background: linear-gradient(135deg, #fffdf5 0%, #fef9ec 100%);
+    padding: 1.5rem 1.8rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    box-shadow: 0 4px 20px rgba(184,134,11,0.07);
+    margin-bottom: 1.4rem;
+  }
+  .price-label { font-size: 0.54rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.28rem; }
+  .price-note { font-size: 0.7rem; color: var(--text-light); line-height: 1.5; }
+  .price-amount {
+    font-family: 'Cinzel', serif;
+    font-size: 1.75rem; font-weight: 600;
+    background: linear-gradient(135deg, #c8950e, #f0d060, #b8860b);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    white-space: nowrap;
+  }
+
+  /* COUNTDOWN */
+  .section-eyebrow { text-align: center; font-size: 0.56rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 1rem; }
+  .countdown-wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
+  .cd-box { text-align: center; padding: 1rem 0.4rem; border: 1px solid rgba(184,134,11,0.14); background: #fffdf5; }
+  .cd-num { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 600; color: var(--gold-light); line-height: 1; display: block; }
+  .cd-label { font-size: 0.5rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); margin-top: 0.28rem; display: block; }
+
+  /* RSVP */
+  .rsvp-section { background: linear-gradient(135deg, #fffdf5 0%, #fdf8ed 100%); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-dark); margin-bottom: 0.8rem; text-align: center; }
+  .rsvp-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--text-light); text-align: center; margin-bottom: 2rem; line-height: 1.6; }
+
+  .rsvp-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: linear-gradient(135deg, #c8950e, #d4a017);
+    padding: 1.1rem 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(184,134,11,0.25);
+    transition: all 0.3s;
+  }
+  .rsvp-btn:hover {
+    background: linear-gradient(135deg, #d4a017, #e8c040);
+    box-shadow: 0 6px 26px rgba(184,134,11,0.35);
+  }
+
+  footer { background: var(--white); text-align: center; padding: 2rem 1rem 3rem; border-top: 1px solid rgba(184,134,11,0.1); }
+  footer p { font-size: 0.58rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(106,79,26,0.3); }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="ornament">
+      <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="35%" stop-color="#d4a017" stop-opacity="0.7"/>
+            <stop offset="65%" stop-color="#d4a017" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="22" x2="200" y2="22" stroke="url(#og)" stroke-width="0.6"/>
+        <polygon points="100,8 106,22 100,36 94,22" fill="none" stroke="#d4a017" stroke-width="1" opacity="0.65"/>
+        <circle cx="100" cy="22" r="3" fill="#d4a017" opacity="0.85"/>
+        <circle cx="55"  cy="22" r="2"   fill="#d4a017" opacity="0.4"/>
+        <circle cx="145" cy="22" r="2"   fill="#d4a017" opacity="0.4"/>
+        <circle cx="20"  cy="22" r="1.2" fill="#d4a017" opacity="0.22"/>
+        <circle cx="180" cy="22" r="1.2" fill="#d4a017" opacity="0.22"/>
+      </svg>
+    </div>
+
+    <p class="mis-quince">Mis 15 años</p>
+    <div class="fifteen">15</div>
+    <div class="anos">años</div>
+
+    <div class="divider"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+
+    <div class="nombre">Giuliana</div>
+
+    <div style="margin-top:1.8rem;">
+      <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="og2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="35%" stop-color="#d4a017" stop-opacity="0.6"/>
+            <stop offset="65%" stop-color="#d4a017" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="22" x2="200" y2="22" stroke="url(#og2)" stroke-width="0.6"/>
+        <circle cx="100" cy="22" r="2.5" fill="#d4a017" opacity="0.75"/>
+        <circle cx="55"  cy="22" r="1.6" fill="#d4a017" opacity="0.35"/>
+        <circle cx="145" cy="22" r="1.6" fill="#d4a017" opacity="0.35"/>
+      </svg>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Ver detalles</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- FRASE -->
+  <div class="frase-section">
+    <div class="gold-line" style="margin-bottom:2rem;"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+    <p class="frase-quote">
+      Soñé con este día <em>desde pequeña.</em><br/>
+      Hoy quiero compartirlo con las personas<br/>
+      que <em>más amo</em> en el mundo.
+    </p>
+    <div class="frase-divider"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+    <div style="margin-top:1.8rem;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--text-light);letter-spacing:2px;margin-bottom:1rem;">por eso...</p>
+      <span class="frase-invitacion">¡Te invito a festejar conmigo! ✦</span>
+    </div>
+  </div>
+
+  <!-- DETAILS -->
+  <section>
+    <div class="gold-line"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+
+    <div class="details-card">
+      <div class="detail-item">
+        <div class="detail-icon">✦</div>
+        <div>
+          <div class="detail-label">Fecha</div>
+          <div class="detail-value">Sábado, 6 de Febrero</div>
+          <div class="detail-sub">2027</div>
+        </div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon">◈</div>
+        <div>
+          <div class="detail-label">Lugar</div>
+          <div class="detail-value">Camping ASTEOM</div>
+          <div class="detail-sub">Santo Tomé, Santa Fe</div>
+          <a class="map-link" href="https://www.google.com/maps/place/Camping+ASTEOM./@-31.697662,-60.751944,17z" target="_blank">↗ Ver en mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <div>
+        <div class="price-label">Valor de la entrada</div>
+        <div class="price-note">Por persona</div>
+      </div>
+      <div class="price-amount">$120.000</div>
+    </div>
+
+    <div class="gold-line" style="margin-bottom:1rem;"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+    <p class="section-eyebrow">Faltan</p>
+    <div class="countdown-wrap">
+      <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Días</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Horas</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Min</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seg</span></div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp-section">
+    <div class="gold-line"><div class="gl"></div><div class="gd"></div><div class="gl"></div></div>
+    <h2 class="section-title">Confirmá tu asistencia</h2>
+    <p class="rsvp-sub">Hacé click para completar el formulario<br/>y avisarnos que vas a estar.</p>
+    <a class="rsvp-btn" href="https://docs.google.com/forms/d/1aN7VRCZJkwMkADZzD_-NLLuA1znYnueAbAJ5-AaWEjQ/viewform" target="_blank">
+      Confirmar asistencia ↗
+    </a>
+  </section>
+
+  <footer>
+    <svg width="120" height="28" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.8rem;display:block;margin-left:auto;margin-right:auto;">
+      <line x1="0" y1="14" x2="120" y2="14" stroke="rgba(184,134,11,0.18)" stroke-width="0.5"/>
+      <circle cx="60" cy="14" r="2.5" fill="rgba(184,134,11,0.3)"/>
+      <circle cx="30" cy="14" r="1.5" fill="rgba(184,134,11,0.18)"/>
+      <circle cx="90" cy="14" r="1.5" fill="rgba(184,134,11,0.18)"/>
+    </svg>
+    <p>Giuliana · XV Años · 6 · II · MMXXVII</p>
+  </footer>
+
+</div>
+
+<script>
+function tick(){
+  var t=new Date('2027-02-06T00:00:00-03:00')-new Date();
+  if(t<0)t=0;
+  document.getElementById('cd-d').textContent=String(Math.floor(t/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor(t%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(t%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(t%60000/1000)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
